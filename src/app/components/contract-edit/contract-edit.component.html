@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Editar Contrato</h2>
+
+  <div *ngIf="message" class="alert alert-info">{{ message }}</div>
+
+  <form (ngSubmit)="searchContract()" class="mb-4">
+    <div class="mb-3" style="max-width: 300px;">
+      <label for="contractId" class="form-label">ID del Contrato</label>
+      <input type="number" id="contractId" [(ngModel)]="id" name="id" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+
+  <div *ngIf="contract" class="card mt-4 p-3 shadow" style="max-width: 600px;">
+    <form (ngSubmit)="editContract()" #editForm="ngForm">
+
+      <div class="mb-3">
+        <label for="startDate" class="form-label">Fecha de inicio</label>
+        <input type="date" id="startDate" name="startDate" [(ngModel)]="contract.startDate" class="form-control"
+          required />
+      </div>
+
+      <div class="mb-3">
+        <label for="endDate" class="form-label">Fecha de fin</label>
+        <input type="date" id="endDate" name="endDate" [(ngModel)]="contract.endDate" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="adjustment" class="form-label">Ajuste</label>
+        <select id="adjustment" name="adjustment" [(ngModel)]="contract.adjustment" class="form-select" required>
+          <option [ngValue]="null" disabled>Seleccione ajuste</option>
+          <option [value]="'EVERY_THREE_MONTHS'">Cada 3 meses</option>
+          <option [value]="'EVERY_FOUR_MONTHS'">Cada 4 meses</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="dni" class="form-label">DNI del Inquilino</label>
+        <input type="text" id="dni" name="dni" [(ngModel)]="contract.dni" class="form-control" required />
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!editForm.form.valid">Guardar Cambios</button>
+    </form>
+  </div>
+
+  <div class="mt-4">
+    <a routerLink="/contrato" class="btn btn-secondary">Volver</a>
+  </div>
+</div>

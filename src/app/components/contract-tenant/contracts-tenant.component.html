@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🔍 Buscar Contratos por DNI de Inquilino</h2>
+
+  <form (ngSubmit)="getContractsByTenant()" class="mb-4">
+    <div class="mb-3" style="max-width: 300px;">
+      <label for="dni" class="form-label">DNI del Inquilino</label>
+      <input
+        type="text"
+        id="dni"
+        [(ngModel)]="dniTenant"
+        name="dniTenant"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-danger text-center">{{ message }}</div>
+
+  <div *ngIf="contracts.length > 0" class="mt-3">
+    <h4>📋 Contratos encontrados: {{ contracts.length }}</h4>
+
+    <div *ngFor="let c of contracts" class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">📄 Contrato ID: {{ c.id }}</h5>
+        <p class="card-text"><strong>Inicio:</strong> {{ c.startDate | date:'yyyy-MM-dd' }}</p>
+        <p class="card-text"><strong>Fin:</strong> {{ c.endDate | date:'yyyy-MM-dd' }}</p>
+        <p class="card-text"><strong>Ajuste:</strong> {{ c.adjustment }}</p>
+
+        <hr />
+
+        <h6>🏠 Propiedad</h6>
+        <p class="card-text"><strong>Nombre:</strong> {{ c.propertyName }}</p>
+        <p class="card-text"><strong>Dirección:</strong> {{ c.propertyAddress }}</p>
+
+        <h6>🏢 Departamento</h6>
+        <p class="card-text"><strong>Piso:</strong> {{ c.departmentFloor }}</p>
+        <p class="card-text"><strong>Letra:</strong> {{ c.departmentLetter }}</p>
+
+        <h6>👤 Inquilino</h6>
+        <p class="card-text"><strong>Nombre:</strong> {{ c.tenantName }}</p>
+        <p class="card-text"><strong>Apellido:</strong> {{ c.tenantLastname }}</p>
+        <p class="card-text"><strong>DNI:</strong> {{ c.dni }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-secondary mt-3" [routerLink]="['/contrato']">Volver</button>
+</div>

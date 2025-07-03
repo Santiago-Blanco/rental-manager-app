@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2>Buscar Inquilino por DNI</h2>
+  <form (ngSubmit)="searchForDni()">
+    <div class="mb-3">
+      <label for="dni" class="form-label">DNI</label>
+      <input type="number" [(ngModel)]="dni" name="dni" class="form-control w-25" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+
+  <div *ngIf="tenant" class="card mt-4 p-3">
+    <h4>Datos del Inquilino</h4>
+    <p><strong>Nombre:</strong> {{ tenant.name }}</p>
+    <p><strong>Apellido:</strong> {{ tenant.lastname }}</p>
+    <p><strong>DNI:</strong> {{ tenant.dni }}</p>
+    <p *ngIf="tenant.propertyName">
+      <strong>Propiedad:</strong> {{ tenant.propertyName }}
+    </p>
+    <p *ngIf="tenant.departmentLetter">
+      <strong>Departamento:</strong> Piso {{ tenant.departmentFloor }}, Letra {{ tenant.departmentLetter }}
+    </p>
+    <p *ngIf="!tenant.departmentLetter">
+      <em>Este inquilino no tiene departamento asignado.</em>
+    </p>
+  </div>
+  <button class="btn btn-secondary mt-3" [routerLink]="['/inquilinos']">Volver</button>
+</div>

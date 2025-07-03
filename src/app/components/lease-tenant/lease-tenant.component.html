@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Buscar Contratos por DNI de Inquilino</h2>
+
+  <form (ngSubmit)="getLeaseByTenant()">
+    <div class="mb-3">
+      <label for="dniTenant" class="form-label">DNI del Inquilino</label>
+      <input
+        type="text"
+        id="dniTenant"
+        [(ngModel)]="dniTenant"
+        name="dniTenant"
+        class="form-control w-25"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-danger mt-3">{{ message }}</div>
+
+  <div *ngIf="leaseList?.length" class="mt-4">
+    <h4>Contratos del Inquilino</h4>
+    <div *ngFor="let lease of leaseList" class="card p-3 mb-2">
+      <p><strong>Inicio:</strong> {{ lease.startDate | date: 'longDate' }}</p>
+      <p><strong>Fin:</strong> {{ lease.endDate ? (lease.endDate | date: 'longDate') : 'Vigente' }}</p>
+      <p><strong>Departamento:</strong> Piso {{ lease.floor }}, Letra {{ lease.letter }}</p>
+      <p><strong>Propiedad:</strong> {{ lease.propertyName }} - {{ lease.address }}</p>
+    </div>
+  </div>
+
+  <button class="btn btn-secondary mt-3" [routerLink]="['/historial']">Volver</button>
+</div>

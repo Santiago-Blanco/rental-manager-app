@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h2>Eliminar Inquilino</h2>
+
+  <form (ngSubmit)="searchTenant()">
+    <div class="mb-3">
+      <label for="dni" class="form-label">DNI del Inquilino</label>
+      <input
+        type="text"
+        id="dni"
+        [(ngModel)]="dni"
+        name="dni"
+        class="form-control w-25"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-info">Buscar</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-info mt-3">
+    {{ message }}
+  </div>
+
+  <div *ngIf="tenant" class="card mt-4 p-3">
+    <h4>¿Deseás eliminar este inquilino?</h4>
+    <p><strong>Nombre:</strong> {{ tenant.name }}</p>
+    <p><strong>Apellido:</strong> {{ tenant.lastname }}</p>
+    <p><strong>DNI:</strong> {{ tenant.dni }}</p>
+
+    <button (click)="deleteTenant()" class="btn btn-danger mt-2">Eliminar</button>
+  </div>
+
+  <button class="btn btn-secondary mt-4" [routerLink]="['/inquilinos']">
+    Volver
+  </button>
+</div>
