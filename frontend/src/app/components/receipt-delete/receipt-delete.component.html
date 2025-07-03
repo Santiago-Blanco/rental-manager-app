@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>Eliminar Recibo</h2>
+
+  <form (ngSubmit)="searchReceipt()">
+    <div class="mb-3">
+      <label for="id" class="form-label">ID del Recibo</label>
+      <input
+        type="number"
+        id="id"
+        [(ngModel)]="id"
+        name="id"
+        class="form-control w-25"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-info">Buscar</button>
+  </form>
+
+  <div *ngIf="message === 'Recibo eliminado correctamente'" class="alert alert-success mt-3">
+    {{ message }}
+  </div>
+
+  <div *ngIf="message && message !== 'Recibo eliminado correctamente'" class="alert alert-danger mt-3">
+    {{ message }}
+  </div>
+
+  <div *ngIf="receipt" class="card mt-4 p-3">
+    <h4>¿Deseás eliminar este recibo?</h4>
+    <p><strong>Fecha:</strong> {{ receipt.date | date:'yyyy-MM-dd' }}</p>
+    <p><strong>Alquiler:</strong> ${{ receipt.rent }}</p>
+    <p><strong>Expensas:</strong> ${{ receipt.expenses }}</p>
+    <p><strong>Obras Sanitarias:</strong> ${{ receipt.obrasSanitarias }}</p>
+    <p><strong>Total:</strong> ${{ receipt.total }}</p>
+    <p><strong>DNI del Inquilino:</strong> {{ receipt.dniTenant }}</p>
+
+    <button (click)="deleteReceipt()" class="btn btn-danger mt-2">Eliminar</button>
+  </div>
+
+  <button class="btn btn-secondary mt-4" [routerLink]="['/recibo']">Volver</button>
+</div>

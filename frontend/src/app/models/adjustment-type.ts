@@ -1,0 +1,4 @@
+export enum AdjustmentType {
+    EVERY_THREE_MONTHS = 'EVERY_THREE_MONTHS',
+    EVERY_FOUR_MONTHS = 'EVERY_FOUR_MONTHS'
+}

@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🧹 Liberar Departamento</h2>
+
+  <form (ngSubmit)="releaseDepartment()" class="mb-4">
+    <div class="mb-3">
+      <label for="propertyName" class="form-label">Propiedad</label>
+      <input type="text" id="propertyName" [(ngModel)]="propertyName" name="propertyName" class="form-control w-50" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="floor" class="form-label">Piso</label>
+      <input type="number" id="floor" [(ngModel)]="floor" name="floor" class="form-control w-25" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="letter" class="form-label">Letra</label>
+      <input type="text" id="letter" [(ngModel)]="letter" name="letter" class="form-control w-25" required />
+    </div>
+
+    <button type="submit" class="btn btn-outline-success">Liberar</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-danger mt-3">
+    {{ message }}
+  </div>
+
+  <div *ngIf="department" class="card mt-4 p-3">
+    <h4>Departamento Liberado</h4>
+    <p><strong>Propiedad:</strong> {{ department.propertyName }}</p>
+    <p><strong>Piso:</strong> {{ department.floor }}</p>
+    <p><strong>Letra:</strong> {{ department.letter }}</p>
+    <p *ngIf="!department.tenant">
+      <strong>Inquilino:</strong> Ninguno (Departamento ahora está disponible)
+    </p>
+  </div>
+
+  <button class="btn btn-secondary mt-3" [routerLink]="['/departamentos']">Volver</button>
+</div>
+

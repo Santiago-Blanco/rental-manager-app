@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Departamentos Disponibles</h2>
+
+    <div *ngIf="message" class="alert alert-danger">
+        {{ message }}
+    </div>
+
+    <div *ngIf="departments.length > 0; else noDepartments">
+        <ul class="list-group">
+            <li *ngFor="let dept of departments" class="list-group-item">
+                <strong>Propiedad:</strong> {{ dept.propertyName }} |
+                <strong>Piso:</strong> {{ dept.floor }} |
+                <strong>Letra:</strong> {{ dept.letter }}
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #noDepartments>
+        <p>No hay departamentos disponibles en este momento.</p>
+    </ng-template>
+
+    <button class="btn btn-secondary mt-3" [routerLink]="['/departamentos']">Volver</button>
+</div>

@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Eliminar Departamento</h2>
+
+  <form (ngSubmit)="searchDepartment()">
+    <div class="mb-3">
+      <label for="propertyName" class="form-label">Nombre de la propiedad:</label>
+      <input type="text" id="propertyName" class="form-control" [(ngModel)]="propertyName" name="propertyName" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="floor" class="form-label">Piso:</label>
+      <input type="number" id="floor" class="form-control" [(ngModel)]="floor" name="floor" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="letter" class="form-label">Letra:</label>
+      <input type="text" id="letter" class="form-control" [(ngModel)]="letter" name="letter" maxlength="1" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3">Buscar Departamento</button>
+  </form>
+
+  <div *ngIf="department" class="card p-3 shadow mt-3">
+    <h5 class="fw-bold">Datos del Departamento:</h5>
+    <p><strong>Piso:</strong> {{ department.floor }}</p>
+    <p><strong>Letra:</strong> {{ department.letter }}</p>
+    <p><strong>Propiedad:</strong> {{ department.propertyName}}</p>
+    <p><strong>Inquilino:</strong> {{ department.tenant?.name || 'Sin inquilino' }}</p>
+
+    <button (click)="deleteDepartment()" class="btn btn-danger mt-3">Eliminar Departamento</button>
+  </div>
+
+  <div *ngIf="message" class="alert alert-info">{{ message }}</div>
+
+  <a [routerLink]="'/departamentos'" class="btn btn-secondary mt-4">Volver</a>
+
+</div>

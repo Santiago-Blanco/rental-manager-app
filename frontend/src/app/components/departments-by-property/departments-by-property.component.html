@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Buscar Departamentos por Propiedad</h2>
+
+    <form (ngSubmit)="getdepartmentsByProperty()" class="mb-4">
+        <div class="mb-3">
+            <label for="propertyName" class="form-label">Nombre de la propiedad</label>
+            <input type="text" id="propertyName" class="form-control w-25" placeholder="Ej: Edificio Central"
+                [(ngModel)]="propertyName" name="propertyName" required />
+            <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+        </div>
+    </form>
+
+
+    <div *ngIf="message" class="alert alert-danger">
+        {{ message }}
+    </div>
+
+    <div *ngIf="departments.length > 0">
+        <h4 class="mb-3">Departamentos encontrados:</h4>
+        <ul class="list-group">
+            <li *ngFor="let dept of departments"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                Departamento Piso {{ dept.floor }} Letra {{ dept.letter }}
+            </li>
+        </ul>
+    </div>
+
+    <button class="btn btn-secondary mt-3" [routerLink]="['/departamentos']">Volver</button>
+</div>

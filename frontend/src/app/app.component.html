@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div *ngIf="releasedDepartments.length > 0 && showReleasedDepartments" class="alert alert-warning text-center mt-3 position-relative">
+  <strong>⚠️ Departamentos liberados automáticamente por vencimiento de contrato:</strong>
+  <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Cerrar" (click)="hideReleasedDepartments()"></button>
+  <ul class="mt-2">
+    <li *ngFor="let d of releasedDepartments">
+      🏢 <strong>{{ d.propertyName }}</strong> - Piso: <strong>{{ d.floor }}</strong>, Letra: <strong>{{ d.letter }}</strong><br>
+      Inquilino anterior: <strong>{{ d.tenant?.name || 'Desconocido' }} {{ d.tenant?.lastname || '' }}</strong>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="contractAdjustment.length > 0 && showContractAdjustment" class="alert alert-info text-center mt-3 position-relative">
+  <h5>📌 Aviso de ajustes</h5>
+  <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Cerrar" (click)="hideContractAdjustment()"></button>
+  <ul class="mb-0">
+    <li *ngFor="let c of contractAdjustment">
+      El contrato con ID <strong>{{ c.id }}</strong> del inquilino 
+      <strong>{{ c.tenantName }} {{ c.tenantLastname }} {{ c.dni }}</strong> debe ser ajustado este mes.
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="contractFinishing.length > 0 && showContractFinish" class="alert alert-danger text-center mt-3 position-relative">
+  <h5>⏳ Contratos que finalizan dentro de un mes</h5>
+  <button type="button" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Cerrar" (click)="hideContractFinish()"></button>
+  <ul class="mb-0">
+    <li *ngFor="let c of contractFinishing">
+      El contrato con ID <strong>{{ c.id }}</strong> del inquilino 
+      <strong>{{ c.tenantName }} {{ c.tenantLastname }} ({{ c.dni }})</strong> finaliza el 
+      <strong>{{ c.endDate }}</strong>.
+    </li>
+  </ul>
+</div>
+
+
+<router-outlet></router-outlet>

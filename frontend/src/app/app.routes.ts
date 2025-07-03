@@ -1,0 +1,96 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { TenantHomeComponent } from './components/tenant-home/tenant-home.component';
+import { TenantFormComponent } from './components/tenant-form/tenant-form.component';
+import { TenantComponent } from './components/tenant/tenant.component';
+import { EditTenantComponent } from './components/tenant-edit/tenant-edit.component';
+import { TenantDeleteComponent } from './components/tenant-delete/tenant-delete.component';
+import { TenantListComponent } from './components/tenant-list/tenant-list.component';
+import { PropertyHomeComponent } from './components/property-home/property-home.component';
+import { PropertyFormComponent } from './components/property-form/property-form.component';
+import { PropertyListComponent } from './components/property-list/property-list.component';
+import { PropertyComponent } from './components/property/property.component';
+import { PropertyEditComponent } from './components/property-edit/property-edit.component';
+import { PropertyDeleteComponent } from './components/property-delete/property-delete.component';
+import { DepartmentHomeComponent } from './components/department-home/department-home.component';
+import { ContractHomeComponent } from './components/contract-home/contract-home.component';
+import { ReciptHomeComponent } from './components/recipt-home/recipt-home.component';
+import { LeaseHomeComponent } from './components/lease-home/lease-home.component';
+import { DepartmentFormComponent } from './components/department-form/department-form.component';
+import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { DepartmentDeleteComponent } from './components/department-delete/department-delete.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { DepartmentEditComponent } from './components/department-edit/department-edit.component';
+import { DepartmentsByPropertyComponent } from './components/departments-by-property/departments-by-property.component';
+import { DepartmentsAvailableComponent } from './components/departments-available/departments-available.component';
+import { ContractComponent } from './components/contract/contract.component';
+import { ContractsTenantComponent } from './components/contract-tenant/contracts-tenant.component';
+import { ContractListComponent } from './components/contract-list/contract-list.component';
+import { ContractEditComponent } from './components/contract-edit/contract-edit.component';
+import { ContractDeleteComponent } from './components/contract-delete/contract-delete.component';
+import { ReceiptComponent } from './components/receipt/receipt.component';
+import { ReceiptTenantComponent } from './components/receipt-tenant/receipt-tenant.component';
+import { ReceiptListComponent } from './components/receipt-list/receipt-list.component';
+import { ReceiptEditComponent } from './components/receipt-edit/receipt-edit.component';
+import { ReceiptFormComponent } from './components/receipt-form/receipt-form.component';
+import { ContractFormComponent } from './components/contract-form/contract-form.component';
+import { ReceiptDeleteComponent } from './components/receipt-delete/receipt-delete.component';
+import { LeaseComponent } from './components/lease/lease.component';
+import { LeaseListComponent } from './components/lease-list/lease-list.component';
+import { LeaseTenantComponent } from './components/lease-tenant/lease-tenant.component';
+import { LeaseDepartmentComponent } from './components/lease-department/lease-department.component';
+import { LeaseEditComponent } from './components/lease-edit/lease-edit.component';
+import { DepartmentAssignTenantComponent } from './components/department-assign-tenant/department-assign-tenant.component';
+import { DepartmentReleaseComponent } from './components/department-release/department-release.component';
+
+export const routes: Routes = [
+    { path: '', component: HomeComponent },
+
+    { path: 'inquilinos', component: TenantHomeComponent },
+    { path: 'inquilinos/lista', component: TenantListComponent },
+    { path: 'inquilinos/crear', component: TenantFormComponent },
+    { path: 'inquilinos/:id', component: TenantComponent },
+    { path: 'inquilinos/:dni/editar', component: EditTenantComponent },
+    { path: 'inquilinos/:dni/eliminar', component: TenantDeleteComponent },
+
+    { path: 'propiedad', component: PropertyHomeComponent },
+    { path: 'propiedad/crear', component: PropertyFormComponent },
+    { path: 'propiedad/lista', component: PropertyListComponent },
+    { path: 'propiedad/buscar', component: PropertyComponent },
+    { path: 'propiedad/editar', component: PropertyEditComponent },
+    { path: 'propiedad/eliminar', component: PropertyDeleteComponent },
+
+    { path: 'departamentos', component: DepartmentHomeComponent },
+    { path: 'departamentos/crear', component: DepartmentFormComponent },
+    { path: 'departamentos/todos', component: DepartmentListComponent },
+    { path: 'departamentos/busqueda-avanzada', component: DepartmentComponent },
+    { path: 'departamentos/filtrar-propiedad', component: DepartmentsByPropertyComponent },
+    { path: 'departamentos/disponibles', component: DepartmentsAvailableComponent },
+    { path: 'departamentos/asignar', component: DepartmentAssignTenantComponent },
+    { path: 'departamentos/liberar', component: DepartmentReleaseComponent },
+    { path: 'departamentos/editar', component: DepartmentEditComponent },
+    { path: 'departamentos/eliminar', component: DepartmentDeleteComponent },
+
+    { path: 'contrato', component: ContractHomeComponent },
+    { path: 'contrato/crear', component: ContractFormComponent },
+    { path: 'contrato/detalle', component: ContractComponent },
+    { path: 'contrato/inquilino', component: ContractsTenantComponent },
+    { path: 'contrato/todos', component: ContractListComponent },
+    { path: 'contrato/editar', component: ContractEditComponent },
+    { path: 'contrato/eliminar', component: ContractDeleteComponent },
+
+    { path: 'recibo', component: ReciptHomeComponent },
+    { path: 'recibo/crear', component: ReceiptFormComponent },
+    { path: 'recibo/detalle', component: ReceiptComponent },
+    { path: 'recibo/inquilino', component: ReceiptTenantComponent },
+    { path: 'recibo/todos', component: ReceiptListComponent },
+    { path: 'recibo/editar', component: ReceiptEditComponent },
+    { path: 'recibo/eliminar', component: ReceiptDeleteComponent },
+
+    { path: 'historial', component: LeaseHomeComponent },
+    { path: 'historial/detalle', component: LeaseComponent },
+    { path: 'historial/todos', component: LeaseListComponent },
+    { path: 'historial/inquilino', component: LeaseTenantComponent },
+    { path: 'historial/departamento', component: LeaseDepartmentComponent },
+    { path: 'historial/edit', component: LeaseEditComponent }
+];
