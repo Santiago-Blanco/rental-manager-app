@@ -14,6 +14,7 @@ public class ReceiptResponseDTO {
     private float expenses;
     private float obrasSanitarias;
     private float total;
+    private float others;
     private String totalInString;
     private String dniTenant;
 

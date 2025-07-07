@@ -19,6 +19,7 @@ public class Receipt {
     private float rent;
     private float expenses;
     private float obrasSanitarias;
+    private float others;
     private float total;
     private String totalInString;
     @ManyToOne

@@ -7,4 +7,5 @@ public class ReceiptAdjustmentDTO {
     private Float rent;
     private Float expenses;
     private Float obrasSanitarias;
+    private Float others;
 }

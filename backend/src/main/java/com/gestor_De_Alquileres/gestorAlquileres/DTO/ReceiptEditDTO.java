@@ -13,6 +13,7 @@ public class ReceiptEditDTO {
     private Float expenses;
     private Float obrasSanitarias;
     private Float total;
+    private Float others;
     private String totalInString;
     private String dni;
 }

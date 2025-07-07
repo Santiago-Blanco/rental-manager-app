@@ -38,6 +38,7 @@ public class ReceiptService implements iReceiptService{
         receipt.setRent(receiptCreate.getRent());
         receipt.setExpenses(receiptCreate.getExpenses());
         receipt.setObrasSanitarias(receiptCreate.getObrasSanitarias());
+        receipt.setOthers(receiptCreate.getOthers());
 
         Tenant tenant = tenantRepo.findBydni(receiptCreate.getDniTenant())
                 .orElseThrow(() -> new TenantNotFound(receiptCreate.getDniTenant()));
@@ -126,6 +127,7 @@ public class ReceiptService implements iReceiptService{
         if (receiptEdit.getRent() != null) receipt.setRent(receiptEdit.getRent());
         if (receiptEdit.getExpenses() != null) receipt.setExpenses(receiptEdit.getExpenses());
         if (receiptEdit.getObrasSanitarias() != null) receipt.setObrasSanitarias(receiptEdit.getObrasSanitarias());
+        if (receiptEdit.getOthers() != null) receipt.setOthers(receipt.getOthers());
         if (receiptEdit.getTotal() != null) receipt.setTotal(receiptEdit.getTotal());
         if (receiptEdit.getTotalInString() != null) receipt.setTotalInString(receiptEdit.getTotalInString());
         if (receiptEdit.getDni() != null) {
@@ -147,6 +149,7 @@ public class ReceiptService implements iReceiptService{
         if (adjustment.getRent() != null) receipt.setRent(adjustment.getRent());
         if (adjustment.getExpenses() != null) receipt.setExpenses(adjustment.getExpenses());
         if (adjustment.getObrasSanitarias() != null) receipt.setObrasSanitarias(adjustment.getObrasSanitarias());
+        if (adjustment.getOthers() != null) receipt.setOthers(adjustment.getOthers());
 
         receipt.setTotal(receipt.getRent() + receipt.getExpenses() + receipt.getObrasSanitarias());
 

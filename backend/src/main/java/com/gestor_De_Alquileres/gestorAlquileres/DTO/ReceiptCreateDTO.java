@@ -19,6 +19,8 @@ public class ReceiptCreateDTO {
     private float expenses;
     @Min(value = 0, message = "El valor debe ser cero o positivo")
     private float obrasSanitarias;
+    @Min(value = 0, message = "El valor debe ser cero o positivo")
+    private float others;
     private String totalInString;
     @NotNull(message = "El DNI del inquilino no puede ser null")
     private String dniTenant;
