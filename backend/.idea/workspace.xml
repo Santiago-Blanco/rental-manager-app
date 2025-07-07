@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ad56d6be-e703-4a36-94af-9fc7a7c7385e" name="Changes" comment="Proyecto finalizado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptAdjustmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptAdjustmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptEditDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptEditDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/DTO/ReceiptResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/Model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/Model/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/Service/ReceiptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestor_De_Alquileres/gestorAlquileres/Service/ReceiptService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

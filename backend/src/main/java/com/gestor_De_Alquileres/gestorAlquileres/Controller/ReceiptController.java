@@ -33,7 +33,7 @@ public class ReceiptController {
         }
         if (receipt == null) return ResponseEntity.badRequest().body("El recibo no puede ser null");
 
-        float total = receipt.getExpenses() + receipt.getRent() + receipt.getObrasSanitarias();
+        float total = receipt.getExpenses() + receipt.getRent() + receipt.getObrasSanitarias() + receipt.getOthers();
         return ResponseEntity.ok().body(Map.of(
                 "total", total,
                 "Mensaje", "ingrese la representacion en texto del total"
