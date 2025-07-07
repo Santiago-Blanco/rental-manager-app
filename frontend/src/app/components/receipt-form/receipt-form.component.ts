@@ -32,6 +32,7 @@ export class ReceiptFormComponent {
       rent: ["", Validators.required],
       expenses: ["", Validators.required],
       obrasSanitarias: ["", Validators.required],
+      others: ["", Validators.required],
       totalInString: ["", Validators.required],
       dniTenant: ["", Validators.required]
     });
@@ -43,6 +44,7 @@ export class ReceiptFormComponent {
       rent: this.receiptForm.get('rent')?.value,
       expenses: this.receiptForm.get('expenses')?.value,
       obrasSanitarias: this.receiptForm.get('obrasSanitarias')?.value,
+      others: this.receiptForm.get('others')?.value,
       totalInString: "",
       dniTenant: this.receiptForm.get('dniTenant')?.value
     };

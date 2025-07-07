@@ -25,6 +25,11 @@
       <input type="number" id="obrasSanitarias" formControlName="obrasSanitarias" class="form-control" />
     </div>
 
+    <div class="mb-3">
+      <label for="others" class="form-label">Otros</label>
+      <input type="number" id="others" formControlName="others" class="form-control">
+    </div>
+
     <button type="button" class="btn btn-primary mb-3" (click)="calcularTotal()">Calcular Total</button>
 
     <div *ngIf="totalCalculado !== null" class="alert alert-info">

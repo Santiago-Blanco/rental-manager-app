@@ -3,6 +3,7 @@ export interface ReceiptCreate {
     rent: number
     expenses: number
     obrasSanitarias: number
+    others: number
     totalInString: string
     dniTenant: string
 }
