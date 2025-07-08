@@ -51,7 +51,7 @@ export class ReceiptFormComponent {
 
     this.receiptService.previewReceipt(dto).subscribe({
       next: (data) => {
-        this.totalCalculado = data.total;
+        this.totalCalculado = data;
       },
       error: (err) => {
         this.message = "Error al calcular el total: " + err.error;
@@ -101,6 +101,7 @@ export class ReceiptFormComponent {
           ['Monto Alquiler', `$${receipt.rent}`],
           ['Expensas', `$${receipt.expenses}`],
           ['Obras Sanitarias', `$${receipt.obrasSanitarias}`],
+          ['Otros', `$${receipt.others}`],
           ['Total en Letras', receipt.totalInString],
           ['DNI Inquilino', receipt.dniTenant],
         ];
